@@ -11,7 +11,6 @@ import { Container } from '../../Box';
 import { questions } from '../../helpers/questions';
 import { Overlay } from './SurveyComponent.style';
 
-console.log(questions);
 // Wrapper
 // Title,
 // SurveyWrapper,
