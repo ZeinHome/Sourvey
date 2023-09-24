@@ -1,1 +1,1 @@
-export { default } from './SurveyComponent.';
+export { default } from './SurveyComponent';

@@ -1,14 +1,24 @@
 import { InputWrapper, CustomInput } from './AnswerOptionsInput.style';
+import { Button } from '../AnswerOptions/AnswerOptions.style';
 
-function AnswerOptionsInput({ handleInputChange, valueInput }) {
+function AnswerOptionsInput({
+  handleInputChange,
+  setOtherButton,
+  valueInput,
+  otherButton,
+}) {
   return (
     <InputWrapper>
-      <CustomInput
-        value={valueInput}
-        onChange={e => handleInputChange(e)}
-        type="text"
-        placeholder="Введите ваш ответ"
-      />
+      {otherButton ? (
+        <CustomInput
+          value={valueInput}
+          onChange={e => handleInputChange(e)}
+          type="text"
+          placeholder="Введите ваш ответ"
+        />
+      ) : (
+        <Button onClick={() => setOtherButton(true)}>Другое</Button>
+      )}
     </InputWrapper>
   );
 }

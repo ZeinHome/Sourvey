@@ -1,16 +1,9 @@
 import styled from 'styled-components';
 
-export const SubmitWrapper = styled.div`
-  display: flex;
-  justify-content: right;
-
-  gap: 20px;
-`;
-
-export const SubmitBtn = styled.button`
+export const Button = styled.button`
   width: 150px;
 
-  background-color: #000;
+  background-color: #00000099;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
@@ -20,6 +13,6 @@ export const SubmitBtn = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #00000099;
+    background-color: #000;
   }
 `;

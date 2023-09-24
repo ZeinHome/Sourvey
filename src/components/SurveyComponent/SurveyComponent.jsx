@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import { useLocation } from 'react-router-dom';
 // import { Base64 } from 'js-base64';
 // import { StyleSheetManager } from 'styled-components';
@@ -31,9 +31,10 @@ const SurveyComponent = () => {
   const [valueInput, setValueInput] = useState('');
   const [surveyJson, setSurveyJson] = useState({});
   const [answerObject, setAnswerObject] = useState('');
+  const [otherButton, setOtherButton] = useState(false);
 
   const activeQuestion = questions[currentQuestion];
-  console.log(surveyJson);
+
   const nextCurrentQuestion = () => {
     setCurrentQuestion(prev => prev + 1);
 
@@ -47,20 +48,40 @@ const SurveyComponent = () => {
     }
 
     setAnswerObject('');
+    setOtherButton(false);
   };
 
-  const handleAnswerBtnClick = answerText => {
+  const backCurrentQuestion = () => {
+    setCurrentQuestion(prev => prev - 1);
+
+    setAnswerObject('');
+    setOtherButton(false);
+    setValueInput('');
+  };
+
+  const handleAnswerBtnClick = (answerText, AnswerCorrect) => {
     setAnswerObject(answerText);
 
     setSurveyJson(prev => ({
       ...prev,
-      [questions[currentQuestion].title]: answerText,
+      [questions[currentQuestion].title]: { answerText, AnswerCorrect },
     }));
   };
 
   const handleInputChange = e => {
     setValueInput(e.target.value);
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onCompleteSurvey = () => {
+    console.log(surveyJson);
+  };
+
+  useEffect(() => {
+    if (currentQuestion === questions.length) {
+      onCompleteSurvey();
+    }
+  }, [currentQuestion, onCompleteSurvey]);
 
   return (
     // <StyleSheetManager
@@ -78,17 +99,6 @@ const SurveyComponent = () => {
     // >
     <Overlay>
       <Container>
-        {currentQuestion < questions.length ? null : (
-          <button
-            type="button"
-            onClick={() => {
-              setCurrentQuestion(0);
-              setSurveyJson('');
-            }}
-          >
-            Reset
-          </button>
-        )}
         {currentQuestion < questions.length ? (
           <Wrapper>
             {`Шаг ${currentQuestion + 1} из ${questions.length}`}
@@ -99,8 +109,11 @@ const SurveyComponent = () => {
               <AnswerOptions
                 handleAnswerBtnClick={handleAnswerBtnClick}
                 handleInputChange={handleInputChange}
+                setOtherButton={setOtherButton}
                 activeQuestion={activeQuestion}
                 valueInput={valueInput}
+                answerObject={answerObject}
+                otherButton={otherButton}
               />
             )}
 
@@ -113,11 +126,26 @@ const SurveyComponent = () => {
 
             <Submit
               nextCurrentQuestion={nextCurrentQuestion}
+              backCurrentQuestion={backCurrentQuestion}
+              currentQuestion={currentQuestion}
               valueInput={valueInput}
               answerObject={answerObject}
             />
           </Wrapper>
-        ) : null}
+        ) : (
+          <button
+            type="button"
+            onClick={() => {
+              setCurrentQuestion(0);
+              setSurveyJson('');
+              setTimeout(() => {
+                console.clear();
+              }, 1000);
+            }}
+          >
+            Reset
+          </button>
+        )}
       </Container>
     </Overlay>
     // </StyleSheetManager>

@@ -29,17 +29,16 @@ export const BtnWrapper = styled.div`
 
 export const Button = styled.button`
   width: 350px;
-  height: 75px;
+  height: 55px;
 
   background-color: #ff8a00;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
-  /* background-color: ${props =>
-    props.selected || props.btnActionYes ? '#985401' : '#ff8a00'}; */
+  font-size: 14px;
+  background-color: ${props => (props.selected ? '#985401' : '#ff8a00')};
   transition: background-color 0.3s ease;
 
   &:hover {
