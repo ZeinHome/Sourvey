@@ -50,7 +50,7 @@ export const Title = styled.h2`
   font-size: 32px;
   font-weight: 700;
 
-  animation: 2s ${fadeInAnimation} ease-out;
+  animation: 1s ${fadeInAnimation} ease-out;
 
   @media (max-width: 800px) {
     font-size: 22px;
@@ -61,7 +61,11 @@ export const Text = styled.p`
   font-size: 18px;
   font-weight: 500;
 
-  animation: 2s ${fadeInAnimation} ease-out;
+  animation: 1s ${fadeInAnimation} ease-out;
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
 `;
 
 export const Button = styled.button`
@@ -72,6 +76,7 @@ export const Button = styled.button`
   color: #000;
   background-image: linear-gradient(to right, #ff9a9e, #fad0c4);
   cursor: pointer;
+  animation: 1s ${fadeInAnimation} ease-out;
   transition: background-image 0.5s;
 
   &:hover {
