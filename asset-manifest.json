@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Sourvey/static/css/main.ed9229a9.css",
-    "main.js": "/Sourvey/static/js/main.05567360.js",
+    "main.js": "/Sourvey/static/js/main.a6004465.js",
     "static/media/akrales.jpg": "/Sourvey/static/media/akrales.afe8806d8be1142d793d.jpg",
     "index.html": "/Sourvey/index.html",
     "main.ed9229a9.css.map": "/Sourvey/static/css/main.ed9229a9.css.map",
-    "main.05567360.js.map": "/Sourvey/static/js/main.05567360.js.map"
+    "main.a6004465.js.map": "/Sourvey/static/js/main.a6004465.js.map"
   },
   "entrypoints": [
     "static/css/main.ed9229a9.css",
-    "static/js/main.05567360.js"
+    "static/js/main.a6004465.js"
   ]
 }
