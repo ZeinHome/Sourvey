@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Sourvey/static/css/main.ed9229a9.css",
+    "main.js": "/Sourvey/static/js/main.3809a358.js",
+    "static/media/akrales.jpg": "/Sourvey/static/media/akrales.afe8806d8be1142d793d.jpg",
+    "index.html": "/Sourvey/index.html",
+    "main.ed9229a9.css.map": "/Sourvey/static/css/main.ed9229a9.css.map",
+    "main.3809a358.js.map": "/Sourvey/static/js/main.3809a358.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed9229a9.css",
+    "static/js/main.3809a358.js"
+  ]
+}
