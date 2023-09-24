@@ -1,5 +1,4 @@
-import { InputWrapper, CustomInput } from './AnswerOptionsInput.style';
-import { Button } from '../AnswerOptions/AnswerOptions.style';
+import { InputWrapper, CustomInput, Button } from './AnswerOptionsInput.style';
 
 function AnswerOptionsInput({
   handleInputChange,

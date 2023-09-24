@@ -12,6 +12,9 @@ export const Wrapper = styled.div`
   padding: 50px 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f2f0f0;
+
+  z-index: 2;
 `;
 
 export const Title = styled.h2`

@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 // import { Base64 } from 'js-base64';
 // import { StyleSheetManager } from 'styled-components';
 // import axios from 'axios';
+
 import { Container } from '../../Box';
 import AnswerOptions from '../AnswerOptions';
 import Input from '../Input';
 import Submit from '../Submit';
+import ParticlesComponent from '../ParticlesComponent';
 // import Modal from '../Modal';
 // import AccomplishedSurvey from '../AccomplishedSurvey';
 // import Registration from '../Registration';
@@ -97,6 +99,7 @@ const SurveyComponent = () => {
     //     ].includes(prop)
     //   }
     // >
+
     <Overlay>
       <Container>
         {currentQuestion < questions.length ? (
@@ -142,12 +145,15 @@ const SurveyComponent = () => {
                 console.clear();
               }, 1000);
             }}
+            style={{ zIndex: 2 }}
           >
             Reset
           </button>
         )}
       </Container>
+      <ParticlesComponent />
     </Overlay>
+
     // </StyleSheetManager>
   );
 };

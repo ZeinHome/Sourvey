@@ -17,3 +17,20 @@ export const CustomInput = styled.input`
     width: 198px;
   } */
 `;
+
+export const Button = styled.button`
+  width: 320px;
+  height: 40px;
+
+  background-color: #ff8a00;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #985401;
+  }
+`;

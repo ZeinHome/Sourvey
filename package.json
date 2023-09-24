@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "sourvey",
   "version": "0.1.0",
   "homepage": "https://ZeinHome.github.io/Sourvey/",
   "private": true,
@@ -15,7 +15,9 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.0",
     "react-signature-canvas": "^1.0.6",
+    "react-tsparticles": "^2.12.2",
     "styled-components": "^6.0.7",
+    "tsparticles-slim": "^2.12.0",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.3"
   },
